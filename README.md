@@ -23,6 +23,8 @@
  ## Does this work on servers?
  Yes, but the server needs to have the base addon for it to work on your end.
 
+ ## Is support for Linux/Mac planned?
+ Currently, no. This is partly due to Razer Synapse only natively supporting Windows.
 
  ## Does this work on beta branches of the game?
  It works on the x86-64 branch. Other branches haven't been tested.
