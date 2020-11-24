@@ -10,6 +10,11 @@
 
 &nbsp;
 
+# Suggestions/Bugs/Contributions
+ If you have a suggestion or want to report a bug, create an issue here or comment on the [workshop page.]() If you would like to contribute to this addon or the binary module, please read the [contributing guidelines](https://github.com/LambdaGaming/GChroma/blob/main/CONTRIBUTING.md) before creating a pull request.
+
+&nbsp;
+
 # Installing
  1. Make sure you have Razer Synapse 3 installed and running with the Chroma Connect module installed as well, and obviously make sure you have a device that supports Razer Synapse 3. (Legacy Synapse versions might work but are unsupported by me.)
  2. Download the GChroma base addon from [here.]()
