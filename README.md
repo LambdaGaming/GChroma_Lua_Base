@@ -11,7 +11,7 @@
 &nbsp;
 
 # Suggestions/Bugs/Contributions
- If you have a suggestion or want to report a bug, create an issue here or comment on the [workshop page.](https://steamcommunity.com/sharedfiles/filedetails/?id=2297412726) If you would like to contribute to this addon or the binary module, please read the [contributing guidelines](https://github.com/LambdaGaming/GChroma/blob/main/CONTRIBUTING.md) before creating a pull request.
+ If you have a suggestion or want to report a bug, create an issue here or comment on the [workshop page.](https://steamcommunity.com/sharedfiles/filedetails/?id=2297412726) If you would like to contribute to this addon or the binary module, please read the [contributing guidelines](https://lambdagaming.github.io/contributing.html) before creating a pull request.
 
 &nbsp;
 
