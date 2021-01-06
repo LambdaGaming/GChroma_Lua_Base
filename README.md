@@ -44,4 +44,4 @@
 
 # Legal
  - All GChroma content made by me, [Source 2 Gman](https://steamcommunity.com/profiles/76561198136556075), AKA [LambdaGaming](https://github.com/LambdaGaming) is licensed under the [MIT license.](https://github.com/LambdaGaming/GChroma/blob/main/LICENSE)
- - RAZER is the registered trademark of Razer Inc. Razer has no affiliation whatsoever with me or my addons.
+ - RAZER is the trademark or registered trademark of Razer Inc. Razer has no affiliation whatsoever with me or my addons.

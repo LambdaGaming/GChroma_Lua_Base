@@ -32,39 +32,23 @@ local function GChroma_Init()
 end
 hook.Add( "InitPostEntity", "Chroma_Init", GChroma_Init )
 
-local function SetDeviceColor()
-	local device = net.ReadInt( 32 )
-	local color = net.ReadVector()
+local function GChroma_SendFunctions()
 	if GChroma_Loaded then
+		local tbl = net.ReadTable()
 		local chroma = GChroma_Start()
-		GChroma_SetDeviceColor( chroma, device, color )
+		for _,v in ipairs( tbl ) do
+			if v[1] == GCHROMA_FUNC_DEVICECOLOR then
+				GChroma_SetDeviceColor( chroma, v[2], v[3] )
+			elseif v[1] == GCHROMA_FUNC_DEVICECOLOREX then
+				GChroma_SetDeviceColorEx( chroma, v[2], v[3], v[4], v[5] )
+			elseif v[1] == GCHROMA_FUNC_RESETCOLOR then
+				GChroma_ResetDevice( chroma, v[2] )
+			end
+		end
 		GChroma_CreateEffect( chroma )
 	end
 end
-net.Receive( "GChroma_SetDeviceColor", SetDeviceColor )
-
-local function SetDeviceColorEx()
-	local device = net.ReadInt( 32 )
-	local color = net.ReadVector()
-	local row = net.ReadInt( 32 )
-	local col = net.ReadInt( 32 )
-	if GChroma_Loaded then
-		local chroma = GChroma_Start()
-		GChroma_SetDeviceColorEx( chroma, device, color, row, col )
-		GChroma_CreateEffect( chroma )
-	end
-end
-net.Receive( "GChroma_SetDeviceColorEx", SetDeviceColorEx )
-
-local function ResetDevice()
-	local device = net.ReadInt( 32 )
-	if GChroma_Loaded then
-		local chroma = GChroma_Start()
-		GChroma_ResetDevice( chroma, device )
-		GChroma_CreateEffect( chroma )
-	end
-end
-net.Receive( "GChroma_ResetDevice", ResetDevice )
+net.Receive( "GChroma_SendFunctions", GChroma_SendFunctions )
 
 function GChroma_KeyConvert( key )
 	local convert = _G["GCHROMA_KEY_"..input.GetKeyName( key ):upper()]

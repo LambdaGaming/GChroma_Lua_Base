@@ -4,27 +4,21 @@ local function GChroma_Init()
 end
 hook.Add( "InitPostEntity", "Chroma_Init", GChroma_Init )
 
-util.AddNetworkString( "GChroma_SetDeviceColor" )
-function GChroma_SetDeviceColor( ply, device, color )
-	net.Start( "GChroma_SetDeviceColor" )
-	net.WriteInt( device, 32 )
-	net.WriteVector( color )
-	net.Send( ply )
+function GChroma_SetDeviceColor( device, color )
+	return { GCHROMA_FUNC_DEVICECOLOR, device, color }
 end
 
-util.AddNetworkString( "GChroma_SetDeviceColorEx" )
-function GChroma_SetDeviceColorEx( ply, device, color, row, col )
-	net.Start( "GChroma_SetDeviceColorEx" )
-	net.WriteInt( device, 32 )
-	net.WriteVector( color )
-	net.WriteInt( row, 32 )
-	net.WriteInt( col, 32 )
-	net.Send( ply )
+function GChroma_SetDeviceColorEx( device, color, row, col )
+	return { GCHROMA_FUNC_DEVICECOLOREX, device, color, row, col }
 end
 
-util.AddNetworkString( "GChroma_ResetDevice" )
-function GChroma_ResetDevice( ply, device )
-	net.Start( "GChroma_ResetDevice" )
-	net.WriteInt( device, 32 )
+function GChroma_ResetDevice( device )
+	return { GCHROMA_FUNC_RESETCOLOR, device }
+end
+
+util.AddNetworkString( "GChroma_SendFunctions" )
+function GChroma_SendFunctions( ply, tbl )
+	net.Start( "GChroma_SendFunctions" )
+	net.WriteTable( tbl )
 	net.Send( ply )
 end
