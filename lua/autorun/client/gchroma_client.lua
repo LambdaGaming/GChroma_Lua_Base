@@ -28,6 +28,8 @@ local function GChroma_Init()
 		GChroma_CreateEffect( chroma )
 		GChroma_Loaded = true
 		MsgC( Color( 0, 255, 0 ), "\nGChroma client-side API loaded successfully.\n" )
+	else
+		chat.AddText( Color( 0, 255, 0 ), "WARNING! GChroma DLL module failed to load. Please follow the install instructions: https://steamcommunity.com/sharedfiles/filedetails/?id=2297412726" )
 	end
 end
 hook.Add( "InitPostEntity", "Chroma_Init", GChroma_Init )
