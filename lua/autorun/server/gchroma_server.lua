@@ -18,6 +18,10 @@ function gchroma.ResetDevice( device )
 	return { GCHROMA_FUNC_RESETCOLOR, device }
 end
 
+function gchroma.ToVector( color )
+	return Vector( color.r, color.g, color.b )
+end
+
 util.AddNetworkString( "GChroma_SendFunctions" )
 function gchroma.SendFunctions( ply, tbl )
 	net.Start( "GChroma_SendFunctions" )

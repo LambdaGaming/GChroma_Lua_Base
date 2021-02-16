@@ -59,3 +59,7 @@ function gchroma.KeyConvert( key )
 	end
 	return convert
 end
+
+function gchroma.ToVector( color )
+	return Vector( color.r, color.g, color.b )
+end
