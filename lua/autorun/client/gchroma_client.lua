@@ -1,9 +1,7 @@
-if pcall( require, "gchroma" ) then --Make sure the client actually has the dll
-	gchroma.Loaded = true
-end
+require( "gchroma" )
 
 local function GChroma_Test()
-	if gchroma.Loaded then
+	if gchroma then
 		local i = 1
 		timer.Create( "GChroma_Init", 0.5, 4, function()
 			local colors = {
@@ -25,7 +23,7 @@ end
 concommand.Add( "gchroma_test", GChroma_Test )
 
 local function GChroma_Init()
-	if gchroma.Loaded then
+	if gchroma then
 		gchroma.ResetDevice( GCHROMA_DEVICE_ALL ) --Doesn't do anything here but tell the SDK to wake up
 		gchroma.CreateEffect()
 		MsgC( Color( 0, 255, 0 ), "\nGChroma client-side API loaded successfully.\n" )
@@ -36,7 +34,7 @@ end
 hook.Add( "InitPostEntity", "Chroma_Init", GChroma_Init )
 
 local function SendFunctions()
-	if gchroma.Loaded then
+	if gchroma then
 		local tbl = net.ReadTable()
 		for _,v in ipairs( tbl ) do
 			if v[1] == GCHROMA_FUNC_DEVICECOLOR then

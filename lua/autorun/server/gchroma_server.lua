@@ -1,7 +1,6 @@
 gchroma = {}
 
 local function GChroma_Init()
-	gchroma.Loaded = true
 	MsgC( Color( 0, 255, 0 ), "\nGChroma server-side API loaded successfully.\n" )
 end
 hook.Add( "InitPostEntity", "Chroma_Init", GChroma_Init )
