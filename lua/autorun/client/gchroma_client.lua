@@ -10,12 +10,12 @@ local function GChroma_Test()
 				GCHROMA_COLOR_BLUE
 			}
 			if i == 4 then
-				gchroma.ResetDevice( chroma, GCHROMA_DEVICE_ALL )
-				gchroma.CreateEffect( chroma )
+				gchroma.ResetDevice( GCHROMA_DEVICE_ALL )
+				gchroma.CreateEffect()
 				return
 			end
-			gchroma.SetDeviceColor( chroma, GCHROMA_DEVICE_ALL, colors[i] )
-			gchroma.CreateEffect( chroma )
+			gchroma.SetDeviceColor( GCHROMA_DEVICE_ALL, colors[i] )
+			gchroma.CreateEffect()
 			i = i + 1
 		end )
 	end
